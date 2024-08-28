@@ -1,0 +1,4 @@
+[ 2024-08-28 06:11:48,582 ] 22 root - INFO - Entered the data 
+[ 2024-08-28 06:11:48,590 ] 25 root - INFO - Read the dataset as pd Dataframe
+[ 2024-08-28 06:11:48,626 ] 32 root - INFO - Train test split initiated
+[ 2024-08-28 06:11:48,668 ] 39 root - INFO - Ingestion of the data is completed
