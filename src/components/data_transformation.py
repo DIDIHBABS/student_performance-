@@ -2,7 +2,7 @@ import sys
 import numpy as np
 from dataclasses import dataclass
 import pandas as pd
-from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
+from sklearn.preprocessing import OneHotEncoder, MinMaxScaler, MaxAbsScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 
@@ -34,20 +34,19 @@ class DataTransformation:
                 'NumberOfQuizzesTaken',
                 'QuizScores',
                 'CompletionRate',
-                'DeviceType',
-                'CourseCompletion'
+                'DeviceType'
             ]
             categorical_columns = ['CourseCategory']
 
             num_pipeline = Pipeline(
                 steps=[
-                    ('scaler', MinMaxScaler())
+                    ('scaler', MaxAbsScaler())
                 ]
             )
             cat_pipeline = Pipeline(
                 steps=[
                     ('one_hot_encoder', OneHotEncoder()),
-                    ('scaler', MinMaxScaler())
+                    ('scaler', MaxAbsScaler())
 
                 ]
             )
@@ -87,6 +86,7 @@ class DataTransformation:
                 'DeviceType',
 
             ]
+            categorical_columns = ['CourseCategory']
             input_feature_train_df = train_df.drop(columns=[target_column_name, drop_column], axis=1)
             target_feature_train_df = train_df[target_column_name]
 
@@ -96,13 +96,11 @@ class DataTransformation:
             logging.info(
                 f"Applying preprocessing object on training dataframe and testing dataframe."
             )
-
+            print(input_feature_train_df)
             input_feature_train_arr = preprocessor_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr = preprocessor_obj.transform(input_feature_test_df)
 
-            train_arr = np.c_[
-                input_feature_train_arr, np.array(target_feature_train_df)
-            ]
+            train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
 
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
 

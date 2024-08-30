@@ -1,5 +1,6 @@
 *.sage.py
 
+.artifact
 .env
 .edtechvenv
 venv/
