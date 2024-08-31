@@ -1,15 +1,18 @@
 from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
-
+from src.pipeline.predict_pipeline import CustomException, PredictPipeline
 from sklearn.preprocessing import StandardScaler
-from src.pipeline.predict_pipeline import CustomData,PredictPipeline
+from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
-application=Flask(__name__)
+application = Flask(__name__)
 
-app=application
+app = application
 
 ## Route for a home page
+
+@app.route('/Home')
+def app_homepage():
 
 @app.route('/predictdata', methods=['GET', 'POST'])
 def predict_datapoint():
@@ -17,16 +20,16 @@ def predict_datapoint():
         return render_template('home.html')
     else:
         data = CustomData(
-            Course_Category=request.form.get('CourseCategory'),
+            CourseCategory = request.form.get('CourseCategory'),
             TimeSpentOnCourse=request.form.get('TimeSpent OnCourse'),
             NumberOfVideosWatched=request.form.get('NumberOfVideosWatched'),
-            lunch=request.form.get('lunch'),
             NumberOfQuizzesTaken=request.form.get('NumberOfQuizzesTaken'),
             QuizScores=float(request.form.get('QuizScores')),
             CompletionRate=float(request.form.get('CompletionRate')),
             DeviceType = float(request.form.get('DeviceType'))
 
         )
+
         pred_df = data.get_data_as_data_frame()
         print(pred_df)
         print("Before Prediction")
