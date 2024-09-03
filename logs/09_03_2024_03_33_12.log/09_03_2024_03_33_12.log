@@ -1,0 +1,8 @@
+[ 2024-09-03 03:33:12,706 ] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:20000
+[ 2024-09-03 03:33:12,706 ] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-09-03 03:33:12,707 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-09-03 03:33:13,273 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-09-03 03:33:13,279 ] 97 werkzeug - INFO -  * Debugger PIN: 505-335-817
+[ 2024-09-03 03:35:04,845 ] 97 werkzeug - INFO -  * Detected change in '/Users/babs/MLOPS/interview_project /app.py', reloading
+[ 2024-09-03 03:35:04,943 ] 97 werkzeug - INFO -  * Restarting with stat
