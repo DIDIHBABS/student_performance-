@@ -1,0 +1,17 @@
+[ 2024-08-30 17:11:41,146 ] 24 root - INFO - Entered the data 
+[ 2024-08-30 17:11:41,156 ] 27 root - INFO - Read the dataset as pd Dataframe
+[ 2024-08-30 17:11:41,194 ] 34 root - INFO - Train test split initiated
+[ 2024-08-30 17:11:41,232 ] 41 root - INFO - Ingestion of the data is completed
+[ 2024-08-30 17:11:41,237 ] 73 root - INFO - The train and test data was read
+[ 2024-08-30 17:11:41,237 ] 74 root - INFO - get preprocessing object
+[ 2024-08-30 17:11:41,237 ] 53 root - INFO - Categorical columns: ['CourseCategory']
+[ 2024-08-30 17:11:41,237 ] 54 root - INFO - Numerical columns: ['TimeSpentOnCourse', 'NumberOfVideosWatched', 'NumberOfQuizzesTaken', 'QuizScores', 'CompletionRate', 'DeviceType']
+[ 2024-08-30 17:11:41,238 ] 96 root - INFO - Applying preprocessing object on training dataframe and testing dataframe.
+[ 2024-08-30 17:11:41,248 ] 107 root - INFO - Saved preprocessing object.
+[ 2024-08-30 17:11:41,254 ] 73 root - INFO - The train and test data was read
+[ 2024-08-30 17:11:41,254 ] 74 root - INFO - get preprocessing object
+[ 2024-08-30 17:11:41,254 ] 53 root - INFO - Categorical columns: ['CourseCategory']
+[ 2024-08-30 17:11:41,254 ] 54 root - INFO - Numerical columns: ['TimeSpentOnCourse', 'NumberOfVideosWatched', 'NumberOfQuizzesTaken', 'QuizScores', 'CompletionRate', 'DeviceType']
+[ 2024-08-30 17:11:41,254 ] 96 root - INFO - Applying preprocessing object on training dataframe and testing dataframe.
+[ 2024-08-30 17:11:41,261 ] 107 root - INFO - Saved preprocessing object.
+[ 2024-08-30 17:11:41,262 ] 40 root - INFO - Split training and test input data
