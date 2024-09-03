@@ -24,7 +24,7 @@ def save_object(file_path, obj):
         raise CustomException(e, sys)
 
 
-def evaluate_models(X_train, y_train, X_test, y_test, models, params):
+def evaluate_models(X_train, y_train, X_test, y_test, models):
     try:
         report = {}
         accuracy_score_train = {}
@@ -32,12 +32,12 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params):
 
         for i in range(len(list(models))):
             model = list(models.values())[i]
-            parameters = params[list(models.keys())[i]]
+            # parameters = params[list(models.keys())[i]]
 
-            gs = GridSearchCV(model, parameters, cv=3)
-            gs.fit(X_train, y_train)
+            # gs = GridSearchCV(model, parameters, cv=3)
+            # gs.fit(X_train, y_train)
 
-            model.set_params(**gs.best_params_)
+            # model.set_params(**gs.best_params_)
             model.fit(X_train, y_train)  # Train model
 
             # Make predictions
@@ -49,7 +49,7 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params):
             train_model_score = classification_report(y_train, y_train_pred)
             test_model_score = classification_report(y_test, y_test_pred)
 
-            train_confusion_matrix= confusion_matrix(y_train, y_train_pred)
+            train_confusion_matrix = confusion_matrix(y_train, y_train_pred)
             test_confusion_matrix = confusion_matrix(y_test, y_test_pred)
 
             train_accuracy_score = accuracy_score(y_train, y_train_pred)

@@ -1,7 +1,7 @@
 from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
-from src.pipeline.predict_pipeline import CustomException, PredictPipeline
+from src.pipeline.predict_pipeline import CustomException
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
@@ -11,8 +11,9 @@ app = application
 
 ## Route for a home page
 
-@app.route('/Home')
-def app_homepage():
+# @app.route('/Home')
+# def app_homepage():
+
 
 @app.route('/predictdata', methods=['GET', 'POST'])
 def predict_datapoint():
@@ -20,13 +21,13 @@ def predict_datapoint():
         return render_template('home.html')
     else:
         data = CustomData(
-            CourseCategory = request.form.get('CourseCategory'),
-            TimeSpentOnCourse=request.form.get('TimeSpent OnCourse'),
-            NumberOfVideosWatched=request.form.get('NumberOfVideosWatched'),
-            NumberOfQuizzesTaken=request.form.get('NumberOfQuizzesTaken'),
-            QuizScores=float(request.form.get('QuizScores')),
-            CompletionRate=float(request.form.get('CompletionRate')),
-            DeviceType = float(request.form.get('DeviceType'))
+            course_category=request.form.get('CourseCategory'),
+            time_spent_on_course=float(request.form.get('TimeSpentOnCourse')),
+            number_of_video_watched=int(request.form.get('NumberOfVideosWatched')),
+            number_of_quiz=int(request.form.get('NumberOfQuizzesTaken')),
+            quiz_scores=float(request.form.get('QuizScores')),
+            completion_rate=float(request.form.get('CompletionRate')),
+            device_type=float(request.form.get('DeviceType'))
 
         )
 
