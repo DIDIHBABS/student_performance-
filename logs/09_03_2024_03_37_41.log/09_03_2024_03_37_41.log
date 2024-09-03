@@ -1,3 +1,0 @@
-[ 2024-09-03 03:37:42,328 ] 97 werkzeug - WARNING -  * Debugger is active!
-[ 2024-09-03 03:37:42,333 ] 97 werkzeug - INFO -  * Debugger PIN: 505-335-817
-[ 2024-09-03 03:37:51,694 ] 97 werkzeug - INFO -  * Detected change in '/Users/babs/MLOPS/interview_project /app.py', reloading
