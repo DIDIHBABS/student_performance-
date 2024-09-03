@@ -44,7 +44,6 @@ class CustomData:
         self.device_type = device_type
         self.course_category = course_category
 
-
     def get_data_as_data_frame(self):
         try:
             custom_data_input_dict = {

@@ -18,7 +18,7 @@ app = application
 @app.route('/predictdata', methods=['GET', 'POST'])
 def predict_datapoint():
     if request.method == 'GET':
-        return render_template('home.html')
+        return render_template('home_page.html')
     else:
         data = CustomData(
             course_category=request.form.get('CourseCategory'),
@@ -43,4 +43,4 @@ def predict_datapoint():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(debug=True, port=5002)
